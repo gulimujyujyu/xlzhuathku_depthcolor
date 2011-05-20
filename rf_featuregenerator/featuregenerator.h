@@ -3,7 +3,10 @@
 #ifndef IMAGEGENERATOR_H
 #define IMAGEGENERATOR_H
 
+#include <stdio.h>
+#include <opencv/cv.h>
 #define SEEDS_ARRAY_SIZE 2000
+#define MAX_DEPTHVALUE 300
 class FeatureGenerator
 {
 public:
@@ -13,10 +16,11 @@ public:
 	void setParameter( int w, int h, int rw, int rh);
 	void setSeeds( int a[SEEDS_ARRAY_SIZE], int b[SEEDS_ARRAY_SIZE]);
 	void generateFeatures();
-	bool write( const char* filename, int flag);
+	bool setOutputFilename( const char* filename, int flag);
 
 private: 
-	//TODO
+	IplImage* pImg;
+	FILE * outfile;
 	int width;
 	int height;
 	int rectWidth;

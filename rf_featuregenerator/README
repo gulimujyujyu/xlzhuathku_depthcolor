@@ -10,7 +10,9 @@ lucienzhu@gmail.com
 ------------------
 1.1 Dependencies
 ------------------
-a. opencv
+a. OpenCV 2.1 for VS2008
+
+a. http://opencv.willowgarage.com/wiki/VisualC%2B%2B_VS2008
 
 ====================================
 2. Usage

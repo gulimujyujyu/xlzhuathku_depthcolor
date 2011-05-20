@@ -21,11 +21,12 @@ int main()
 		printf("Error occured in reading %s", inFilename);
 		return -1;
 	}
-	a.generateFeatures();
-	if (!(a.write(outFilename, 0)))
+	if (!(a.setOutputFilename(outFilename, 0)))
 	{
 		printf("Error occurred in writing to %s", outFilename);
 	}
+	a.generateFeatures();
+	
 	
 	return 0;
 }
