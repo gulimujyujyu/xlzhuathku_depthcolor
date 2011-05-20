@@ -1,10 +1,17 @@
 #include<iostream>
+#include "randomforest_id3.h"
+#include "id3tree.h"
 
 __global__ void kernel(void) {
 }
 
 int main()
 {
+	//STEP1: read images
+	
+	//STEP2: train random forest classifier
+
+	//STEP3: test classifier
 	kernel<<<1,1>>>();
 	printf("Hello world!\n");
 

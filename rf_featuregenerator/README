@@ -1,0 +1,24 @@
+###############################
+Image Feature Generator for Randome Forest
+Xiaolong ZHU@HKU
+lucienzhu@gmail.com
+###############################
+
+====================================
+1. Prerequisites
+====================================
+------------------
+1.1 Dependencies
+------------------
+a. opencv
+
+====================================
+2. Usage
+====================================
+Generate Training Set for Training a Random Forest.
+This part is without GPU acceleration.
+
+====================================
+3. Empirical Notes
+====================================
+

@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="rf_id3"
-	ProjectGUID="{E5A0DF6E-0F16-41CC-8510-50B0DF30D0CC}"
-	RootNamespace="rf_id3"
+	Name="rf_featuregenerator"
+	ProjectGUID="{6DF179F2-A804-4105-8E03-59002A07682D}"
+	RootNamespace="rf_featuregenerator"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -14,9 +14,6 @@
 		/>
 	</Platforms>
 	<ToolFiles>
-		<DefaultToolFile
-			FileName="NvCudaRuntimeApi.v3.2.rules"
-		/>
 	</ToolFiles>
 	<Configurations>
 		<Configuration
@@ -31,9 +28,6 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="Cudart Build Rule"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -66,9 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="cudart.lib cutil32D.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(CUDA_LIB_PATH);&quot;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
@@ -108,9 +100,6 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="Cudart Build Rule"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -182,19 +171,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\id3tree.cu"
+				RelativePath=".\featuregenerator.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\main.cu"
-				>
-			</File>
-			<File
-				RelativePath=".\pixelmanager.cu"
-				>
-			</File>
-			<File
-				RelativePath=".\randomforest_id3.cu"
+				RelativePath=".\main.cpp"
 				>
 			</File>
 		</Filter>
@@ -204,15 +185,7 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\id3tree.h"
-				>
-			</File>
-			<File
-				RelativePath=".\pixelmanager.h"
-				>
-			</File>
-			<File
-				RelativePath=".\randomforest_id3.h"
+				RelativePath=".\featuregenerator.h"
 				>
 			</File>
 		</Filter>
