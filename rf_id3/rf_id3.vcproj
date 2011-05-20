@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="xlzhuathku_depthcolor"
-	ProjectGUID="{82224DD3-7211-4B5B-B2D2-34649556B1E2}"
-	RootNamespace="xlzhuathku_depthcolor"
+	Name="rf_id3"
+	ProjectGUID="{E5A0DF6E-0F16-41CC-8510-50B0DF30D0CC}"
+	RootNamespace="rf_id3"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -15,7 +15,7 @@
 	</Platforms>
 	<ToolFiles>
 		<DefaultToolFile
-			FileName="NvCudaRuntimeApi.rules"
+			FileName="NvCudaRuntimeApi.v3.2.rules"
 		/>
 	</ToolFiles>
 	<Configurations>
