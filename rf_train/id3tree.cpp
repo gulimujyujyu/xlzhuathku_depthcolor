@@ -8,15 +8,10 @@
 #include <math.h>
 #include "item.h"
 
-#define MAX_ATTRIBUTE_VALUE 999999
-#define MIN_ATTRIBUTE_VALUE -999999
-#define HISTO_BINS 8
-
 ID3Tree::ID3Tree(ItemSet &trainSet, int maxDepth, int K)
 {
 	this->maxDepth = maxDepth;
 	this->K = K;
-	this->dim = trainSet.dim;
 	this->attributesPerRound = ATTRIBUTES_PER_ROUND;
 	this->train(trainSet);
 }
@@ -37,7 +32,6 @@ vector<int> ID3Tree::generate_attributes(int idx)
 		sampleTimes += 10;
 	}
 
-	srand(time(NULL));
 	for ( i=0; i<sampleTimes; i++) {
 		fallInto[rand()%dim].value += 1;
 	}
@@ -126,7 +120,7 @@ int ID3Tree::find_best_split( ItemSet &trainSet, vector<int> &attrib, int start,
 	float histo1[CLASS_NUM];
 	float histo2[CLASS_NUM];
 	float bestThres;
-	float bestGain = 100;
+	float bestGain = MAX_GAIN_VALUE;
 	float splitA = 0;
 	int splitAtt ;
 	for (i=0; i< attrib.size(); i++) {
@@ -194,13 +188,15 @@ int ID3Tree::find_best_split( ItemSet &trainSet, vector<int> &attrib, int start,
 		}
 	}
 
-	if ( bestGain==-1){
+	if ( bestGain==MAX_GAIN_VALUE){
 		return end;
 	}
 	//move data
 	int hd = start;
 	int tl = end-1;
 	int tmpPos;
+	
+	attrib;
 	for ( j = start; j < tl; ){
 		if (trainSet.data[trainSet.idxArray[j]].feature[splitAtt] > splitA) {
 			tmpPos = trainSet.idxArray[j];
@@ -232,6 +228,7 @@ int ID3Tree::find_best_split( ItemSet &trainSet, vector<int> &attrib, int start,
 
 void ID3Tree::train(ItemSet &trainSet)
 {
+	this->dim = trainSet.dim;
 	if ( maxDepth < 1) {
 		return;
 	}
@@ -265,7 +262,18 @@ void ID3Tree::build_node(ItemSet &trainSet, int parent, int idx, int depth, int 
 		return;
 	}
 	vector<int> attrib = generate_attributes(idx);
+	for ( int ii = 0; ii < ATTRIBUTES_NUM_OF_RETRY && attrib.size() <= 0; ii++) {
+		attrib = generate_attributes(idx);
+	}
+	if ( attrib.size() <= 0){
+		mark_as_leaf(trainSet, idx, depth, start, end);
+		return;
+	}
 	float entropy = calculate_entropy(trainSet, start, end);
+	if ( entropy < ZERO_ENTROPY) {
+		mark_as_leaf(trainSet, idx, depth, start, end);
+		return;
+	}
 	int splitPoint = find_best_split(trainSet, attrib, start, end, idx);
 	if( splitPoint < end) {
 		mark_as_branch(idx);
@@ -277,7 +285,7 @@ void ID3Tree::build_node(ItemSet &trainSet, int parent, int idx, int depth, int 
 	}
 }
 
-void ID3Tree::print(ostream &out)
+void ID3Tree::write(ostream &out)
 {
 	int i=0;
 	for( i=0; i<this->tree.size(); i++) {

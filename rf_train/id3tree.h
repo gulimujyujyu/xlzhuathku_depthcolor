@@ -7,6 +7,12 @@
 using namespace std;
 //TODO: printing
 #define ATTRIBUTES_PER_ROUND 10
+#define ATTRIBUTES_NUM_OF_RETRY 10
+#define MAX_ATTRIBUTE_VALUE 999999
+#define MIN_ATTRIBUTE_VALUE -999999
+#define HISTO_BINS 8
+#define ZERO_ENTROPY 1e-9
+#define MAX_GAIN_VALUE 999999
 
 struct AttrMapping{
 	int idx;
@@ -16,6 +22,7 @@ struct AttrMapping{
 class ID3Tree {
 public:
 	ID3Tree() {};
+	ID3Tree( int maxDepth, int K) { this->maxDepth = maxDepth; this->K = K;}
 	ID3Tree( ItemSet &trainSet, int maxDepth, int K);
 
 	void train(ItemSet &trainSet);
@@ -27,7 +34,7 @@ public:
 	void mark_as_branch( int idx);
 	bool checkAttri(int idx, int tmpIdx);
 
-	void print( ostream&out);
+	void write( ostream&out);
 
 	float test(ItemSet &testSet);
 	vector<float> predict(ItemSet &testSet, int no);
