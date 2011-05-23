@@ -9,8 +9,8 @@ int main()
 {
 	ifstream inData;
 	ifstream inLabel;
-	char dataFilename[] = "data/heart_data.txt";
-	char labelFilename[] = "data/heart_labels.txt";
+	char dataFilename[] = "data/000000.txt";
+	char labelFilename[] = "data/000000.label";
 	inLabel.open( labelFilename, ifstream::in);
 	inData.open(dataFilename, ifstream::in );
 	if( !(inLabel.good())|| !(inData.good()))
@@ -22,7 +22,7 @@ int main()
 	ItemSet trainSet( inData, inLabel, 270);
 
 	srand(time(NULL));
-	ID3Tree tree(trainSet, 13, 10);
+	ID3Tree tree(trainSet, 10, 10);
 	/*
 	trainSet.resetIdx();
 	srand(time(NULL));
