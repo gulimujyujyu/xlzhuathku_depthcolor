@@ -1,10 +1,35 @@
 #include<iostream>
 #include "randomforest_id3.h"
 #include "id3tree.h"
+#include <stdio.h>
 
 __global__ void kernel(void) {
 }
 
+int main()
+{
+	float *tptr;
+	float *devPtr;
+	char filename[] = "test.txt";
+	int dim = 9;
+	int itemNum = 5;
+	readTrainingSet( &tptr, filename, itemNum, dim);
+	//
+	//for ( int i=0; i<itemNum; i++) {
+	//	for ( int j=0; j<dim; j++) {
+	//		printf( "%f ", tptr[i*(dim+1)+j]);
+	//	}
+	//	printf( "%f\n", tptr[i*(dim+1)+dim]);
+	//}
+	devPtr = createDevicePtr( tptr, itemNum, false, dim);
+
+	Forest forest;
+	trainForest( &forest, devPtr,itemNum, dim);
+
+	return 0;
+}
+
+/*
 int main()
 {
 	//STEP1: read images
@@ -34,3 +59,4 @@ int main()
 	}
 	return 0;
 }
+*/
