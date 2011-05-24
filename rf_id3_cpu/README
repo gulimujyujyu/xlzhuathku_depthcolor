@@ -1,0 +1,52 @@
+###############################
+Random Forest in CPU for debug purpose
+Xiaolong ZHU@HKU
+lucienzhu@gmail.com
+###############################
+
+====================================
+1. Prerequisites
+====================================
+------------------
+1.1 Dependencies
+------------------
+
+-----------------
+1.2 My Settings
+-----------------
+_____________
+1.2.1 CUDA
+_____________
+0. Download CUDA GPU-enabled driver.
+1. Download CUDA Toolkit 3.2
+2. Download CUDA SDK for win32
+
+*. see http://developer.nvidia.com/cuda-downloads
+
+_____________
+1.2.2 VS setting
+_____________
+Follow the setup shown in http://www.programmerfish.com/how-to-run-cuda-on-visual-studio-2008-vs08/
+
+0. Adding cuda.rules to your project. Mine is located in C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v3.2\extras\visual_studio_integration
+
+1. Setup BIN/LIB/INCLUDES
+1.1 Goto Tools –> Options –> Projects and Solutions –> VC++ Directories
+1.2 Specify the INCLUDE directories. Mine is %CUDA Directory%include
+1.3 Select Library files from the dropdown and specify: %CUDA%lib directory
+1.4 Select Executable files from the dropdown and specify: %CUDA%bin directory
+1.5 Goto Project –> Properties –> Configuration Properties –> CUDA setting -> specify the include path for cutilD32.lib related file.
+
+2. Specify the CUDA Runtime and CUTIL32D Linkers
+2.1 Goto Project –> Properties –> Configuration Properties –> Linker –> Input. specify two few files in the Additional Dependencies field: CUDART.lib and CUTIL32D.lib
+2.2 Goto Project –> Properties –> Configuration Properties –> Linker –> General and paste this line in the Additional Library Directories field: $(CUDA_LIB_PATH);../../common/lib. For "../../common/lib", Mine is located in C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common
+
+====================================
+2. Usage
+====================================
+Implement a Random Forest in CUDA C.
+
+====================================
+3. Empirical Notes
+====================================
+
