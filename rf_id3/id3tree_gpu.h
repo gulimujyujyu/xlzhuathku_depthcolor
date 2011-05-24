@@ -3,8 +3,9 @@
 
 #include <stdio.h>
 #define NUM_OF_CLASSES 6
-#define NUM_OF_PARAMS 1001 //twice as FEATURE_DIM+1( attri + threshold)
+#define NUM_OF_PARAMS 500 //twice as FEATURE_DIM+1( attri + threshold)
 #define NUM_OF_TREES 4
+#define MAX_TREE_NODE_NUM 600
 
 struct TreeNode {
 	int idx;

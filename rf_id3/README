@@ -41,6 +41,7 @@ Follow the setup shown in http://www.programmerfish.com/how-to-run-cuda-on-visua
 1.2 Specify the INCLUDE directories. Mine is %CUDA Directory%include
 1.3 Select Library files from the dropdown and specify: %CUDA%lib directory
 1.4 Select Executable files from the dropdown and specify: %CUDA%bin directory
+1.5 Goto Project –> Properties –> Configuration Properties –> CUDA setting -> specify the include path for cutilD32.lib related file.
 
 2. Specify the CUDA Runtime and CUTIL32D Linkers
 2.1 Goto Project –> Properties –> Configuration Properties –> Linker –> Input. specify two few files in the Additional Dependencies field: CUDART.lib and CUTIL32D.lib

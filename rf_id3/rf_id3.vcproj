@@ -34,6 +34,7 @@
 			/>
 			<Tool
 				Name="Cudart Build Rule"
+				Include="C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common\inc"
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -68,7 +69,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="cudart.lib cutil32D.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(CUDA_LIB_PATH);&quot;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common\lib&quot;"
+				AdditionalLibraryDirectories="$(CUDA_LIB_PATH);&quot;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common\lib&quot;;C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 3.2\C\common\lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				TargetMachine="1"
