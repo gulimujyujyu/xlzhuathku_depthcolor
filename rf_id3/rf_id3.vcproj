@@ -182,7 +182,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\id3tree.cu"
+				RelativePath=".\id3tree_gpu.cu"
 				>
 			</File>
 			<File
@@ -193,10 +193,6 @@
 				RelativePath=".\pixelmanager.cu"
 				>
 			</File>
-			<File
-				RelativePath=".\randomforest_id3.cu"
-				>
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -204,15 +200,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\id3tree.h"
+				RelativePath=".\id3tree_gpu.h"
 				>
 			</File>
 			<File
 				RelativePath=".\pixelmanager.h"
-				>
-			</File>
-			<File
-				RelativePath=".\randomforest_id3.h"
 				>
 			</File>
 		</Filter>

@@ -21,6 +21,7 @@ int main()
 	string inFilename = dirr + "0_0_2011_19_05_15_13_42_938depth.png";
 	string labelFilename = dirr + "0_0_2011_19_05_15_13_43_037color.png";;
 	string outFilename = dirr + "000000.txt";
+	string outParamFilename = dirr + "000000.param";
 	string outLabelFilename = dirr + "000000.label";
 	int w = 512;
 	int h = 512;
@@ -46,9 +47,9 @@ int main()
 		printf("Error occured in reading %s", labelFilename.c_str());
 		return -1;
 	}
-	if (!(a.setOutputFilename(outFilename.c_str(), 0)))
+	if (!(a.setOutputFilename(outFilename.c_str(),outParamFilename.c_str(), 0)))
 	{
-		printf("Error occurred in writing to %s", outFilename.c_str());
+		printf("Error occurred in writing to %s, %s", outFilename.c_str(),outParamFilename.c_str());
 	}
 	if (!(a.setOutputFilenameLabel(outLabelFilename.c_str(), 0)))
 	{

@@ -9,10 +9,19 @@ int main()
 {
 	ifstream inData;
 	ifstream inLabel;
+	ofstream outTree;
 	char dataFilename[] = "data/000000.txt";
 	char labelFilename[] = "data/000000.label";
-	inLabel.open( labelFilename, ifstream::in);
-	inData.open(dataFilename, ifstream::in );
+	char treeFilename[] = "data/000000.tree";
+	inLabel.open( labelFilename, ios::in);
+	inData.open( dataFilename, ios::in );
+	outTree.open( treeFilename, ios::out);
+
+	if( !(outTree.good())) {
+		printf("open failed.");
+		return -1;
+	}
+
 	if( !(inLabel.good())|| !(inData.good()))
 	{
 		printf("open failed.");
@@ -22,7 +31,7 @@ int main()
 	ItemSet trainSet( inData, inLabel, 270);
 
 	srand(time(NULL));
-	ID3Tree tree(trainSet, 10, 10);
+	ID3Tree tree(trainSet, 5, 10);
 	/*
 	trainSet.resetIdx();
 	srand(time(NULL));
@@ -40,7 +49,7 @@ int main()
 	trainSet.resetIdx();
 	tree4.write(cout);
 	*/
-	ID3Forest forest(trainSet, 20, 10);
+	ID3Forest forest(trainSet, 4, 10);
 	
 	/*
 	forest.addTree(tree);
@@ -59,7 +68,7 @@ int main()
 	*/
 	cout << forest.test( trainSet) << endl;
 	
-	//forest.write(cout);
+	forest.write(outTree);
 	inLabel.close();
 	inData.close();
 	return 0;

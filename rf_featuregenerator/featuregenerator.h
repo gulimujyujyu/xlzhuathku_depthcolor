@@ -22,13 +22,14 @@ public:
 	void setSeeds( int a[SEEDS_ARRAY_SIZE], int b[SEEDS_ARRAY_SIZE]);
 	void generateFeatures();
 	void generateLabels();
-	bool setOutputFilename( const char* filename, int flag);
+	bool setOutputFilename( const char* filename, const char* filenameParam, int flag);
 	bool setOutputFilenameLabel( const char* filename, int flag);
 	void createHash();
 private: 
 	IplImage* pImg;
 	IplImage* pImgLabel;
 	ofstream outfile;
+	ofstream outfileParam;
 	ofstream outfileLabel;
 	int width;
 	int height;

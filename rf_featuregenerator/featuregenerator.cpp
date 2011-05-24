@@ -21,6 +21,7 @@ FeatureGenerator::~FeatureGenerator(void)
 {
 	outfile.close();
 	outfileLabel.close();
+	outfileParam.close();
 	if(pImg)
 		cvReleaseImage(&pImg);
 	if(pImgLabel)
@@ -58,14 +59,16 @@ bool FeatureGenerator::readLabel(const char * filename)
 	return true;
 }
 
-bool FeatureGenerator::setOutputFilename(const char* filename, int flag = 0)
+bool FeatureGenerator::setOutputFilename(const char* filename, const char* filenameParam, int flag = 0)
 {
 	switch(flag) {
 		case 0:
 			outfile.open( filename, ios::out);
+			outfileParam.open( filenameParam, ios::out);
 			break;
 		case 1:
 			outfile.open( filename, ios::app);
+			outfileParam.open( filenameParam, ios::app);
 			break;
 		default:
 			return false;
@@ -90,13 +93,16 @@ bool FeatureGenerator::setOutputFilenameLabel(const char* filename, int flag = 0
 
 void FeatureGenerator::generateFeatures()
 {
-	if ( !(outfile.good())) {
+	if ( !(outfile.good()) || !(outfileParam.good())) {
 		return ;
+	}
+	for( int ii = 0; ii<SEEDS_ARRAY_SIZE; ii++) {
+		outfileParam << seedsX[ii] << "\t" << seedsY[ii] << endl;
 	}
 	float p1, p2, p3;
 	float feat = 0;
 	int u1, v1;
-	for( int xx = 0 ; xx < width; xx += IMAGE_STEP) 
+	for( int xx = 0; xx < width; xx += IMAGE_STEP) 
 		for ( int yy =0; yy<height; yy += IMAGE_STEP) {
 			//get element: depth;
 			p1 = (float)(((uchar*)(pImg->imageData + pImg->widthStep*yy))[xx*3]);
