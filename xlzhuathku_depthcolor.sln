@@ -14,6 +14,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator", "rf_f
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_train", "rf_train\rf_train.vcproj", "{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_img2float", "rf_img2float\rf_img2float.vcproj", "{87A144DA-17D8-4232-985E-4664998E88C3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_id3_cpu", "rf_id3_cpu\rf_id3_cpu.vcproj", "{9EC49288-D27A-41E3-9884-B2F17B2C1363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -36,6 +40,14 @@ Global
 		{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}.Debug|Win32.Build.0 = Debug|Win32
 		{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}.Release|Win32.ActiveCfg = Release|Win32
 		{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}.Release|Win32.Build.0 = Release|Win32
+		{87A144DA-17D8-4232-985E-4664998E88C3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{87A144DA-17D8-4232-985E-4664998E88C3}.Debug|Win32.Build.0 = Debug|Win32
+		{87A144DA-17D8-4232-985E-4664998E88C3}.Release|Win32.ActiveCfg = Release|Win32
+		{87A144DA-17D8-4232-985E-4664998E88C3}.Release|Win32.Build.0 = Release|Win32
+		{9EC49288-D27A-41E3-9884-B2F17B2C1363}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9EC49288-D27A-41E3-9884-B2F17B2C1363}.Debug|Win32.Build.0 = Debug|Win32
+		{9EC49288-D27A-41E3-9884-B2F17B2C1363}.Release|Win32.ActiveCfg = Release|Win32
+		{9EC49288-D27A-41E3-9884-B2F17B2C1363}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
