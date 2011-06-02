@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <regex>
 #include "featuregenerator.h"
 #include "time.h"
 using namespace std;
@@ -27,7 +28,6 @@ int main()
 	int h = 512;
 	int rw = 64;
 	int rh = 64;
-
 
 	srand(time(NULL));
 	generateSeeds();

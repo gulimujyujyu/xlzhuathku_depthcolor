@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 
-#define FEATURE_DIM 500
+#define FEATURE_DIM 200
 #define CLASS_NUM 6
 
 struct Item {

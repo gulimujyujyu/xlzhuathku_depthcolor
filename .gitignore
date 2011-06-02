@@ -1,4 +1,9 @@
 
+#ignore all data file
+*.txt
+*.label
+*.tree
+*.param
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
@@ -27,3 +32,5 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+rf_train/data/000000.label
+rf_train/data/000000.label

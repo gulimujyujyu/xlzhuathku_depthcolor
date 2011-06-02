@@ -23,4 +23,5 @@ This part is without GPU acceleration.
 ====================================
 3. Empirical Notes
 ====================================
-
+This is only used for generating features from one image.
+For batch processing for more images, use ./rf_featuregenerator_qt.

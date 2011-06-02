@@ -5,6 +5,8 @@
 #include <iostream>
 #include <time.h>
 
+#define TREE_DEPTH 20
+
 int main()
 {
 	ifstream inData;
@@ -28,10 +30,12 @@ int main()
 		return -1;
 	}
 
-	ItemSet trainSet( inData, inLabel, 270);
+	ItemSet trainSet( inData, inLabel, 709400);
 
+	printf("Read finished.\n");
 	srand(time(NULL));
-	ID3Tree tree(trainSet, 5, 10);
+	ID3Tree tree(trainSet, TREE_DEPTH, 10);
+	printf("Tree finished.\n");
 	/*
 	trainSet.resetIdx();
 	srand(time(NULL));
@@ -49,7 +53,8 @@ int main()
 	trainSet.resetIdx();
 	tree4.write(cout);
 	*/
-	ID3Forest forest(trainSet, 4, 10);
+	ID3Forest forest(trainSet, 5, TREE_DEPTH);
+	printf("Forest finished.\n");
 	
 	/*
 	forest.addTree(tree);

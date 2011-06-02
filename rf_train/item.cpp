@@ -19,6 +19,9 @@ void ItemSet::read(  istream& inData, int itemNum )
 {
 	for (int i=0; i<itemNum; i++)
 	{
+		if( !(i%10000)) {
+			printf("%d\n",i);
+		}
 		Item tmp;
 		for (int j=0; j<FEATURE_DIM; j++)
 		{
@@ -35,6 +38,9 @@ void ItemSet::read(  istream& inData, istream& inLabel, int itemNum )
 	int j = 0;
 	for (int i=0; i<itemNum; i++)
 	{
+		if( !(i%10000)) {
+			printf("%d\n",i);
+		}
 		Item tmp;
 		for (int j=0; j<FEATURE_DIM; j++)
 		{

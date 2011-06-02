@@ -256,6 +256,9 @@ float ID3Tree::calculate_entropy(ItemSet &trainSet, int start, int end)
 
 void ID3Tree::build_node(ItemSet &trainSet, int parent, int idx, int depth, int start, int end)
 {
+	if (depth < 5) {
+		printf("%d,%d,%d\t", depth, start, end);
+	}
 	//return
 	if ( depth >= maxDepth)	{
 		mark_as_leaf(trainSet, idx, depth, start, end);
