@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_id3_cpu", "rf_id3_cpu\rf
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_qt", "rf_featuregenerator_qt\rf_featuregenerator_qt.vcproj", "{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_predict", "rf_predict\rf_predict.vcproj", "{0C5E6734-7080-430D-8F87-CE05B62B85B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -54,6 +56,10 @@ Global
 		{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}.Debug|Win32.Build.0 = Debug|Win32
 		{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}.Release|Win32.ActiveCfg = Release|Win32
 		{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}.Release|Win32.Build.0 = Release|Win32
+		{0C5E6734-7080-430D-8F87-CE05B62B85B7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C5E6734-7080-430D-8F87-CE05B62B85B7}.Debug|Win32.Build.0 = Debug|Win32
+		{0C5E6734-7080-430D-8F87-CE05B62B85B7}.Release|Win32.ActiveCfg = Release|Win32
+		{0C5E6734-7080-430D-8F87-CE05B62B85B7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

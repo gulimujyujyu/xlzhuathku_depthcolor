@@ -1,0 +1,25 @@
+###############################
+Image Predictor
+Xiaolong ZHU@HKU
+lucienzhu@gmail.com
+###############################
+
+====================================
+1. Prerequisites
+====================================
+------------------
+1.1 Dependencies
+------------------
+a. OpenCV 2.1 for VS2008
+
+a. http://opencv.willowgarage.com/wiki/VisualC%2B%2B_VS2008
+
+====================================
+2. Usage
+====================================
+Read Tree OR Forest;
+And Predict the label for each component.
+
+====================================
+3. Empirical Notes
+====================================
