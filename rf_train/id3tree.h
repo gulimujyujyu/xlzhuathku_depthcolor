@@ -35,9 +35,11 @@ public:
 	bool checkAttri(int idx, int tmpIdx);
 
 	void write( ostream&out);
+	void read( istream&in);
 
 	float test(ItemSet &testSet);
 	vector<float> predict(ItemSet &testSet, int no);
+	vector<float> predict(Item item);
 private:
 	vector<ID3TreeNode> tree;
 	int dim;

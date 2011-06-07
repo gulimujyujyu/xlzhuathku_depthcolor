@@ -23,3 +23,9 @@ And Predict the label for each component.
 ====================================
 3. Empirical Notes
 ====================================
+Macros like:
+CLASS_NUM 
+FEATURE_NUM
+must be changed w.r.t. the certain dataset.
+
+*. Hopefully, these code can be optimized and better organized.

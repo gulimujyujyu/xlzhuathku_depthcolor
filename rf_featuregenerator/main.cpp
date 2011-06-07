@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <regex>
+//#include <regex>
 #include "featuregenerator.h"
 #include "time.h"
 using namespace std;
@@ -18,9 +18,9 @@ void generateSeeds()
 
 int main()
 {
-	string dirr = "F:\\xlzhu\\DATAs\\[CDC4CV]HandTracking\\000\\";
-	string inFilename = dirr + "0_0_2011_19_05_15_13_42_938depth.png";
-	string labelFilename = dirr + "0_0_2011_19_05_15_13_43_037color.png";;
+	string dirr = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1\\";
+	string inFilename = dirr + "000000_color.png";
+	string labelFilename = dirr + "000000_label.png";;
 	string outFilename = dirr + "000000.txt";
 	string outParamFilename = dirr + "000000.param";
 	string outLabelFilename = dirr + "000000.label";

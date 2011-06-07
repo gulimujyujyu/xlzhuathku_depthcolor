@@ -23,3 +23,16 @@ void ID3TreeNode::print( ostream &out)
 	}
 	out << endl;
 }
+
+void ID3TreeNode::read(istream &in, int dis_size)
+{
+	float a;
+	in >> this->parent
+		>> this->leftChild
+		>> this->isLeaf
+		>> this->attri
+		>> this->thres;
+	for( int i=0; i<dis_size; i++) {
+		in >> this->distribution[i];
+	}
+}

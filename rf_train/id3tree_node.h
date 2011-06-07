@@ -11,6 +11,7 @@ public:
 	ID3TreeNode();
 	~ID3TreeNode() {};
 	void print( ostream &out);
+	void read( istream &in, int dis_size);
 
 	//int splitThis( ItemSet &trainSet, int begin, int end);
 

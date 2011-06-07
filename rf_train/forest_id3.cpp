@@ -1,9 +1,20 @@
 #include "forest_id3.h"
 #include "id3tree.h"
 
+ID3Forest::ID3Forest( int tNum, int K)
+{
+	set(tNum, K);
+}
+
+
 ID3Forest::ID3Forest( ItemSet &trainSet, int tNum, int K)
 {
 	train(trainSet, tNum, K);
+	set(tNum, K);
+}
+
+void ID3Forest::set( int tNum, int K )
+{
 	this->numOfTrees = tNum;
 	this->K = K;
 }
@@ -38,6 +49,33 @@ vector<float> ID3Forest::predict(ItemSet &testSet, int no)
 
 	for( treeNo=0; treeNo<this->numOfTrees; treeNo++ ) {
 		vector<float> tmp = this->forest[treeNo].predict(testSet, no);
+		for( int ii = 0 ; ii < rslt.size(); ii++) {
+			rslt[ii] += tmp[ii];
+			sumA += tmp[ii];
+		}
+	}
+	for( int ii = 0 ; ii < rslt.size(); ii++) {
+		rslt[ii] /= sumA;
+	}
+	return rslt;
+}
+
+vector<float> ID3Forest::predict(Item item)
+{
+	int idx = 0;
+	int treeNo;
+	int attr = 0;
+	float splitA = 0;
+	float sumA = 0;
+	vector<float> rslt(CLASS_NUM, 0);
+	/*
+	for( int ii = 0 ; ii < rslt.size(); ii++) {
+	rslt[ii] = 0;
+	}
+	*/
+
+	for( treeNo=0; treeNo<this->numOfTrees; treeNo++ ) {
+		vector<float> tmp = this->forest[treeNo].predict(item);
 		for( int ii = 0 ; ii < rslt.size(); ii++) {
 			rslt[ii] += tmp[ii];
 			sumA += tmp[ii];
@@ -85,4 +123,20 @@ void ID3Forest::write( ostream& s)
 {
 	for(int i=0 ;i < numOfTrees; i++) 
 		this->forest[i].write(s);
+}
+
+void ID3Forest::read(istream& s)
+{
+	for(int i=0; i< numOfTrees; i++) {
+		ID3Tree a;
+		a.read(s);
+		this->forest.push_back(a);
+	}
+}
+
+bool ID3Forest::isEmpty()
+{
+	if( this->numOfTrees == 0)
+		return true;
+	return false;
 }

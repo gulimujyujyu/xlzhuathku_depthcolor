@@ -290,10 +290,44 @@ void ID3Tree::build_node(ItemSet &trainSet, int parent, int idx, int depth, int 
 
 void ID3Tree::write(ostream &out)
 {
+	out << this->tree.size() << '\t'
+		<< CLASS_NUM << endl;
 	int i=0;
 	for( i=0; i<this->tree.size(); i++) {
 		this->tree[i].print( out);
 	}
+}
+
+void ID3Tree::read(istream&in)
+{
+	int numOfNodes;
+	int numOfClasses;
+	in >> numOfNodes >> numOfClasses;
+	int i=0;
+	for( i=0; i<numOfNodes; i++) {
+		ID3TreeNode a;
+		a.read(in, numOfClasses);
+		this->tree.push_back(a);
+	}
+}
+
+vector<float> ID3Tree::predict(Item item)
+{
+	int idx = 0;
+	int attr = 0;
+	float splitA = 0;
+	while( this->tree[idx].isLeaf == false) {
+		attr = this->tree[idx].attri;
+		splitA = this->tree[idx].thres;
+		if ( item.feature[attr] > splitA) {
+			//right
+			idx = this->tree[idx].leftChild+1;
+		} else {
+			//left
+			idx = this->tree[idx].leftChild;
+		}
+	}
+	return this->tree[idx].distribution;
 }
 
 vector<float> ID3Tree::predict(ItemSet &testSet, int no)

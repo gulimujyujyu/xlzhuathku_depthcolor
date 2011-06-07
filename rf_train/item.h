@@ -5,8 +5,8 @@
 #include <fstream>
 using namespace std;
 
-#define FEATURE_DIM 200
-#define CLASS_NUM 6
+#define FEATURE_DIM 500
+#define CLASS_NUM 24
 
 struct Item {
 	float feature[FEATURE_DIM];
