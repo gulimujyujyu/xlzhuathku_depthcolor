@@ -38,7 +38,7 @@ private:
 	int hashRGB[24];
 	IplImage *data;
 	IplImage *label;
-	float offset[FEATURE_DIM][2];
+	float offset[SEEDS_ARRAY_SIZE][2];
 	ID3Forest forest;	
 	int width;
 	int height;

@@ -5,7 +5,8 @@
 #include <fstream>
 using namespace std;
 
-#define FEATURE_DIM 500
+#define SEEDS_ARRAY_SIZE 400
+#define FEATURE_DIM (SEEDS_ARRAY_SIZE/2)
 #define CLASS_NUM 24
 
 struct Item {

@@ -35,7 +35,7 @@ void ItemSet::read(  istream& inData, int itemNum )
 
 void ItemSet::read(  istream& inData, istream& inLabel, int itemNum )
 {
-	int j = 0;
+	int jj = 0;
 	for (int i=0; i<itemNum; i++)
 	{
 		if( !(i%10000)) {
@@ -53,8 +53,8 @@ void ItemSet::read(  istream& inData, istream& inLabel, int itemNum )
 		}
 
 		data.push_back(tmp);
-		idxArray.push_back(j);
-		j++;
+		idxArray.push_back(jj);
+		jj++;
 	}
 	this->dim = FEATURE_DIM;
 	this->itemNum = data.size();

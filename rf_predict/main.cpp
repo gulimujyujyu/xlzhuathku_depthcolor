@@ -8,8 +8,11 @@ using namespace std;
 int main()
 {
 	//Random Forest
-	char treeFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000.treein";
-	char outTreeFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000.treeout";
+	char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000000.tree";
+	char outTreeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000000.treeout";
+	//param
+	char paramFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000000.param";
+	char paramOutFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000000_out.param";
 	ifstream inTree;
 	ofstream outTree;
 
@@ -17,16 +20,14 @@ int main()
 	outTree.open( outTreeFilename, ios::out);
 	
 	//image
-	char dataFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_color_in.png";
-	char dataOutFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_color_out.png";
+	char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000004_color.png";
+	char dataOutFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000004_color_out.png";
 
 	//LABEL
-	char labelFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_label_in.png";
-	char labelOutFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_label_out.png";
+	char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000004_label.png";
+	char labelOutFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000004_label_out.png";
 
-	//param
-	char paramFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_in.param";
-	char paramOutFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000_out.param";
+	
 
 	//sliding window
 	int w = 512;

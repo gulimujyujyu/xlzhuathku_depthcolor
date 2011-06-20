@@ -22,7 +22,7 @@ void generateSeeds()
 int main(int argc, char *argv[])
 {
 	//char dirr[] = "F:\\xlzhu\\DATAs\\[CDC4CV]HandTracking\\000\\";
-	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic1\\000";
+	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic1\\018";
 	char re[] = "(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png";
  	
 	int w = 512;
@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 	FileValidator fv(re, dirr);
 	//qDebug() << fv.findFileInDir() << endl;
 
-	string outFilename = "000000.txt";
-	string outParamFilename = "000000.param";
-	string outLabelFilename = "000000.label";
+	string outFilename = "018.txt";
+	string outParamFilename = "018.param";
+	string outLabelFilename = "018.label";
 
 	srand(time(NULL));
 	generateSeeds();
@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
 	QString colorimg;
 	QByteArray ci;
 
-	for (lat = -90; lat <= 90; lat += 10) {
-		for ( lon = 0; lon < 360; lon += 10) {
+	for (lat = -90; lat <= 90; lat += 20) {
+		for ( lon = 0; lon < 360; lon += 20) {
 			printf("(%d, %d).\n", lat, lon);
 
 			depthFilename = QString::number(lat) + QString("_") + QString::number(lon) + QString("_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png");

@@ -18,7 +18,7 @@ void generateSeeds()
 
 int main()
 {
-	string dirr = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1\\";
+	string dirr = "E:\\DATA\\[CDC4CV11]\\ForPrediction\\";
 	string inFilename = dirr + "000000_color.png";
 	string labelFilename = dirr + "000000_label.png";;
 	string outFilename = dirr + "000000.txt";

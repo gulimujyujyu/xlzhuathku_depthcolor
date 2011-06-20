@@ -5,20 +5,20 @@
 #include <iostream>
 #include <time.h>
 
-#define TREE_DEPTH 15
+#define TREE_DEPTH 20
 
 int main()
 {
 	ifstream inData;
 	ifstream inLabel;
 	ofstream outTree;
-	int traingSetSize = 7040;
+	int traingSetSize = 181455;
 	//char dataFilename[] = "data/000000.txt";
 	//char labelFilename[] = "data/000000.label";
 	//char treeFilename[] = "data/000000.tree";
-	char dataFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000.txt";
-	char labelFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000.label";
-	char treeFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\TOY1/000000.tree";
+	char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.txt";
+	char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.label";
+	char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.tree";
 	inLabel.open( labelFilename, ios::in);
 	inData.open( dataFilename, ios::in );
 	outTree.open( treeFilename, ios::out);

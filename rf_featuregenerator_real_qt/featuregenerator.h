@@ -1,7 +1,6 @@
 #pragma once
-
-#ifndef IMAGEGENERATOR_H
-#define IMAGEGENERATOR_H
+#ifndef FEATURE_GENERATOR_H
+#define FEATURE_GENERATOR_H
 
 #include <opencv/cv.h>
 #include <fstream>
@@ -9,8 +8,6 @@
 #define SEEDS_PER_IMAGE 2000
 #define MAX_DEPTHVALUE 300
 #define IMAGE_STEP 4
-
-using namespace std;
 
 class FeatureGenerator
 {
@@ -23,6 +20,7 @@ public:
 	void setSeeds( int a[SEEDS_ARRAY_SIZE], int b[SEEDS_ARRAY_SIZE]);
 	void generateFeatures();
 	void generateLabels();
+	bool hasFeatureAndLabel();
 	bool setOutputFilename( const char* filename, const char* filenameParam, int flag);
 	bool setOutputFilenameLabel( const char* filename, int flag);
 	void createHash();
@@ -40,4 +38,5 @@ private:
 	int seedsY[SEEDS_ARRAY_SIZE];
 	int hashRGB[24];
 };
+
 #endif
