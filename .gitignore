@@ -1,6 +1,10 @@
 
+#matlab ignore
+*.asv
+
 #ignore all data file
 *.txt
+*.classifer
 *.label
 *.tree
 *.param
