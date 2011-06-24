@@ -1,36 +1,55 @@
-%% playground.m
-% for doodle-like testing
-% Xiaolong ZHU
-% lucienzhu@gmail.com 
-% The University of Hong Kong
+
+%% includes
+addPath('./lib/bfilter2/BilateralFiltering');
 
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/';
+g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/333/';
+g_imgName_color = '2011_22_06_07_20_19_730_978_677image.png';
+g_imgName_depth = '2011_22_06_07_20_19_730_978_677depth.png';
+g_imgName_bf = '2011_22_06_07_20_19_730_978_677bf.png';
 g_version = '0.1';
-g_fileName_output = ['mog_' g_version '.classifier'];
-label = 1;
+g_classifierName = ['svm_' g_version '.classifier'];
+colorMapping = [
+    255 0 0;
+    255 0 255;
+    0 0 255;
+    0 255 0;
+    0 255 255;
+    255 255 255;
+    255 255 0;
+    ];
 
-% test
-fileName_input = ['train_label_' num2str(label) '.txt'];
-fin = fopen([g_dirr fileName_input]);
-if fin < 0
-    printf('Open File Failed: %s', fileName_input);
-    return;
+%% STEP 1: process image
+% bilateral filter must in [0,1]
+im_co = double(imread([g_dirr g_imgName_color]))/255;
+im_de = double(imread([g_dirr g_imgName_depth]))/255;
+
+% bilateral filter
+% Set bilateral filter parameters.
+bf_w     = 7;       % bilateral filter half-width
+bf_sigma = [10 0.2]; % bilateral filter standard deviations
+im_bf = bfilter2(im_co,bf_w,bf_sigma);
+
+% set mask
+im_masked = im_bf;
+[X Y nChannel] = size(im_masked);
+for xx = 1:X
+    for yy = 1:Y
+        item1 = squeeze(im_co(xx,yy,:)).*255;
+        item2 = squeeze(im_de(xx,yy,:)).*255;
+        if( norm(item1) < 40 || norm(item2) < 2)
+            im_masked(xx,yy,:) = 0;
+        end
+    end
 end
 
-%read data
-data = fscanf(fin, '%d %d %d %d', [4 inf]);
 
-ma = max(data');
-mi = min(data');
-
-aa = length(mi);
-
-for i=1:aa
-    mu = min(i) + (max(i)-min(i))*rand();
-end
-
-%close
-fclose(fin);
-
-%% lalala
+figure(1);
+subplot(2,2,1);
+imshow(im_co);
+subplot(2,2,2);
+imshow(im_de);
+subplot(2,2,3);
+imshow(im_masked);
+subplot(2,2,4);
+imshow(im_bf);

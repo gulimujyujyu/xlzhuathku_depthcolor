@@ -14,7 +14,7 @@ g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/';
 g_version = '0.1';
 g_fileName_output = ['mog_' g_version '.classifier'];
 g_m = 3;
-g_numOfClass = 7;
+g_numOfClass = 6;
 g_color = {
     '.r','*r';
     '.k','*k';

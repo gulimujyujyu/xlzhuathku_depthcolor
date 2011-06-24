@@ -11,7 +11,7 @@ clc
 %% includes
 addPath('./lib/libsvm-3.1/matlab')
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/';
+g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/333/';
 g_version = '0.1';
 g_fileName_output = ['svm_' g_version '.classifier'];
 g_m = 3;
