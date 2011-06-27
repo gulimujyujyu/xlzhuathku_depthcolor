@@ -125,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="qtmaind.lib QtCored4.lib QtGuid4.lib"
+				AdditionalDependencies="qtmaind.lib QtCored4.lib cv210.lib cxcore210.lib highgui210.lib"
 				OutputFile="$(OutDir)\$(ProjectName).exe"
 				AdditionalLibraryDirectories="$(QTDIR)\lib"
 				GenerateDebugInformation="true"
@@ -167,6 +167,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\filevalidator.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
@@ -178,6 +182,10 @@
 			>
 			<File
 				RelativePath=".\featuregenerator.h"
+				>
+			</File>
+			<File
+				RelativePath=".\filevalidator.h"
 				>
 			</File>
 		</Filter>

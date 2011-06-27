@@ -2,11 +2,10 @@
 #include <fstream>
 #include <opencv/highgui.h>
 
-int		R[] = {255,255,  0,  0, 75,139,255, 25,  0,128,255,255, 65, 46,216,255,238,  0,  0,189,112, 47,128,210};
-int		G[] = {  0,255,  0,255,  0,  0, 69, 25,100,  0, 20,160,105,139,191,182,232,191,255,183,128, 79,128,105};
-int		B[] = {  0,  0,255,  0,130,  0,  0,112,  0,128,147,122,225, 87,216,193,170,255,127,107,144, 79,128, 30};
-//int label[] = {  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  3,  3,  3,  3,  3,  4,  4,  4,  5};
-int label[] = {  0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23};
+int		R[] = {255,255,  0,  0,  0,255,255};
+int		G[] = {  0,  0,  0,255,255,255,255};
+int		B[] = {  0,255,255,  0,255,255,  0};
+int label[] = {  0,  1,  2,  3,  4,  5,  6};
 
 FeatureGenerator::FeatureGenerator(void)
 {
@@ -42,7 +41,6 @@ bool FeatureGenerator::read(const char * filename)
 		cvReleaseImage(&pImg);
 	}
 	pImg = cvLoadImage( filename, 1);
-	
 	if ( pImg == NULL) {
 		return false;
 	}
@@ -55,7 +53,6 @@ bool FeatureGenerator::readLabel(const char * filename)
 		cvReleaseImage(&pImgLabel);
 	}
 	pImgLabel = cvLoadImage( filename, 1);
-	//filter the label image
 	if ( pImgLabel == NULL) {
 		return false;
 	}
@@ -129,7 +126,7 @@ void FeatureGenerator::generateFeatures()
 				else
 					p3 = (float)(((uchar*)(pImg->imageData + pImg->widthStep*(v1)))[(u1)*3]);
 				i++;
-				
+
 				p2 = p2<0.5? MAX_DEPTHVALUE: (255-p2);
 				p3 = p3<0.5? MAX_DEPTHVALUE: (255-p3);
 				feat = p2 - p3;
@@ -158,21 +155,12 @@ void FeatureGenerator::generateLabels()
 			p2 = (int)(((uchar*)(pImgLabel->imageData + pImgLabel->widthStep*yy))[xx*3+1]);
 			p3 = (int)(((uchar*)(pImgLabel->imageData + pImgLabel->widthStep*yy))[xx*3]);
 			int RGB = p1*1000000 + p2*1000+ p3;
-			for( ii = 0; ii<24; ii++) {
+			for( ii = 0; ii<NUM_OF_LABELS; ii++) {
 				if(RGB == hashRGB[ii])
 					break;
 			}
-			outfileLabel << (ii>=24?(-1):(label[ii])) << endl;
+			outfileLabel << (ii>=NUM_OF_LABELS?(-1):(label[ii])) << endl;
 		}
-}
-
-bool FeatureGenerator::hasFeatureAndLabel()
-{
-	//has label
-	//1. contain 7 validated color
-	//2. contain depth information
-
-	return false;
 }
 
 void FeatureGenerator::setParameter(int w, int h, int rw, int rh)
@@ -184,8 +172,8 @@ void FeatureGenerator::setParameter(int w, int h, int rw, int rh)
 }
 
 /*
- *	MUST CALL AFTER setParameter
- */
+*	MUST CALL AFTER setParameter
+*/
 void FeatureGenerator::setSeeds(int a[SEEDS_ARRAY_SIZE], int b[SEEDS_ARRAY_SIZE])
 {
 	int i;
