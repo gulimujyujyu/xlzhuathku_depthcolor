@@ -10,19 +10,20 @@ clear all
 clc
 
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/';
+g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/' %xlzhumac
+% g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/'; %xlzhulab
 g_version = '0.1';
 g_fileName_output = ['mog_' g_version '.classifier'];
 g_m = 3;
-g_numOfClass = 6;
+g_numOfClass = 7;
 g_color = {
-    '.r','*r';
-    '.k','*k';
-    '.b','*b';
-    '.g','*g';
-    '.y','*y';
-    '.c','*c';
-    '.m','*m';    
+    '.r','*g';
+    '.k','*w';
+    '.b','*y';
+    '.g','*r';
+    '.y','*b';
+    '.c','*m';
+    '.m','*c';    
     };
 
 %% Training
@@ -44,7 +45,7 @@ for label = 1:g_numOfClass
     figure(1)
     hold on
     scatter3(data(:,1),data(:,2),data(:,3),g_color{label,1});
-    plot3(gmm{label}.mu(:,1),gmm{label}.mu(:,2),gmm{label}.mu(:,3),g_color{label,2});
+    plot3(gmm{label}.mu(:,1)*255,gmm{label}.mu(:,2)*255,gmm{label}.mu(:,3)*255,g_color{label,2});
     %close the file
     fclose(fin);
 end

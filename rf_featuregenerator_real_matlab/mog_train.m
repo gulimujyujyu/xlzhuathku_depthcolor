@@ -4,7 +4,7 @@ function [ gmm] = mog_train( data, m )
 %   m: number of components
 %   model: mu + Sigma + p
 
-lb = data(:,1:end-1);
+lb = data(:,1:end-1)./255;
 dt = data(:,end);
 
 [itemNum itemDim] = size(lb);
@@ -17,7 +17,7 @@ mu = zeros(m,itemDim);
 sigma = zeros(itemDim, itemDim, m);
 for ii = 1:m
     mu(ii,:) = zeros(1,itemDim);
-    sigma(:,:,ii) = eye(itemDim)*255;
+    sigma(:,:,ii) = eye(itemDim);
     for jj = 1:itemDim
         mu(ii,jj) = mi(jj)+(ma(jj)-mi(jj))*rand();
     end

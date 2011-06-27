@@ -2,17 +2,21 @@
 % Xiaolong ZHU
 % lucienzhu@gmail.com
 % The University of Hong Kong
+close all
+clear all
+clc
 
 %% includes
 addPath('./lib/bfilter2/BilateralFiltering');
 
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/333/';
-g_imgName_color = '2011_22_06_07_26_18_589_978_677image.png';
-g_imgName_depth = '2011_22_06_07_26_18_589_978_677depth.png';
-g_imgName_bf = '2011_22_06_07_26_18_589_978_677bf.png';
+g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/' %xlzhumac
+% g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/'; %xlzhulab
+g_imgName_color =   '2011_22_06_07_26_21_129_978_677image.png';
+g_imgName_depth =   '2011_22_06_07_26_21_129_978_677depth.png';
+g_imgName_bf    =   '2011_22_06_07_26_21_129_978_677bf.png';
 g_version = '0.1';
-g_classifierName = ['svm_' g_version '.classifier'];
+g_classifierName = ['mog_' g_version '.classifier'];
 colorMapping = [
     255 0 0;
     255 0 255;
@@ -69,10 +73,14 @@ for xx = 1:X
         if norm(item) <= 1
             im_res(xx,yy,:) = 0;
         else
-            [prob class] = svm_predict(item, svmModel, g_numOfClass, g_m);
-            im_res(xx,yy,1) = colorMapping(class,1);
-            im_res(xx,yy,2) = colorMapping(class,2);
-            im_res(xx,yy,3) = colorMapping(class,3);
+            [prob class] = mog_predict(item, gmm, g_numOfClass);
+            if class == -1 || class == 7
+                im_res(xx,yy,:) = 0;
+            else
+                im_res(xx,yy,1) = colorMapping(class,1);
+                im_res(xx,yy,2) = colorMapping(class,2);
+                im_res(xx,yy,3) = colorMapping(class,3);
+            end
         end
     end
 end
@@ -85,3 +93,17 @@ subplot(2,2,3);
 imshow(im_masked);
 subplot(2,2,4);
 imshow(im_res);
+
+%% STEP 3: post-porcessing, median filter
+% TODO: try the conservative way
+
+% this is the radical way
+im_res_md = im_res;
+im_res_md(:,:,1) = medfilt2(im_res(:,:,1),[3 3]);
+im_res_md(:,:,2) = medfilt2(im_res(:,:,2),[3 3]);
+im_res_md(:,:,3) = medfilt2(im_res(:,:,3),[3 3]);
+figure(3);
+subplot(2,1,1);
+imshow(im_res);
+subplot(2,1,2);
+imshow(im_res_md);
