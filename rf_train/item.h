@@ -7,7 +7,7 @@ using namespace std;
 
 #define SEEDS_ARRAY_SIZE 400
 #define FEATURE_DIM (SEEDS_ARRAY_SIZE/2)
-#define CLASS_NUM 24
+#define CLASS_NUM 7
 
 struct Item {
 	float feature[FEATURE_DIM];
