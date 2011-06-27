@@ -148,5 +148,6 @@ for ii = 1:numOfFiles
     subplot(2,2,4);
     imshow(im_lbl/g_numOfClass);
     
-    imwrite(im_res, [strList(ii*2,:) 'real.png']);
+    imwrite(im_de, [g_dirr num2str(ii) 'depth.png']);
+    imwrite(im_res, [g_dirr num2str(ii) 'color.png']);
 end
