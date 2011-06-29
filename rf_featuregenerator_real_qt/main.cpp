@@ -22,11 +22,11 @@ void generateSeeds()
 int main(int argc, char *argv[])
 {
 	//xlzhumac
-	char dirr[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train";
-	//char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic1\\018";
+	//char dirr[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train";
+	char dirr[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444";
 	char re[] = "(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png";
 	const int START_FILE_NUM = 1;
-	const int END_FILE_NUM = 2;
+	const int END_FILE_NUM = 55;
 
 	int w = 217;
 	int h = 233;

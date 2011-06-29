@@ -10,8 +10,8 @@ clc;
 addPath('./lib/bfilter2/BilateralFiltering');
 
 %% globals
-g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/train/' %xlzhumac
-% g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/'; %xlzhulab
+% g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/train/' %xlzhumac
+g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/444/'; %xlzhulab
 % 2011_22_06_07_20_19_730_978_677depth
 g_pattern_prefix = '\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}_\d{3}_\d{3}_\d{3}';
 g_pattern_postfix_depth = 'depth.png';

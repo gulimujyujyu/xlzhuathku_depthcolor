@@ -24,6 +24,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_predict", "rf_predict\rf
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_qt", "rf_featuregenerator_real_qt\rf_featuregenerator_real_qt.vcproj", "{15E4B881-5A34-48A3-9B85-280661A1C59A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_video_qt", "rf_featuregenerator_real_video_qt\rf_featuregenerator_real_video_qt.vcproj", "{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -66,6 +68,10 @@ Global
 		{15E4B881-5A34-48A3-9B85-280661A1C59A}.Debug|Win32.Build.0 = Debug|Win32
 		{15E4B881-5A34-48A3-9B85-280661A1C59A}.Release|Win32.ActiveCfg = Release|Win32
 		{15E4B881-5A34-48A3-9B85-280661A1C59A}.Release|Win32.Build.0 = Release|Win32
+		{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}.Debug|Win32.Build.0 = Debug|Win32
+		{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}.Release|Win32.ActiveCfg = Release|Win32
+		{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

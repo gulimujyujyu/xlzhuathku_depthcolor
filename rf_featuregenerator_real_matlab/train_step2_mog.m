@@ -10,8 +10,8 @@ clear all
 clc
 
 %% Globals
-g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/' %xlzhumac
-% g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/222/'; %xlzhulab
+% g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/' %xlzhumac
+g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/444/'; %xlzhulab
 g_version = '0.1';
 g_fileName_output = ['mog_' g_version '.classifier'];
 g_m = 3;

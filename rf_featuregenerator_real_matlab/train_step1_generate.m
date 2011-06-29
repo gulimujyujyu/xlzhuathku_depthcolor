@@ -5,10 +5,13 @@
 % lucienzhu@gmail.com 
 % The University of Hong Kong
 
+%% includes
+addPath('./lib/bfilter2/BilateralFiltering');
+
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/333/';
+g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/444/';
 g_imgName_color = '2011_22_06_07_20_19_730_978_677image.png';
-g_label = 7;
+g_label = 6;
 g_imgName_mask = ['2011_22_06_07_20_19_730_978_677mask_' num2str(g_label) '.png'];
 g_fileName_output = ['train_label_' num2str(g_label) '.txt'];
 g_numOfSamples = 1000;

@@ -5,25 +5,25 @@
 #include <iostream>
 #include <time.h>
 
-#define TREE_DEPTH 10
+#define TREE_DEPTH 15
 
 int main()
 {
 	ifstream inData;
 	ifstream inLabel;
 	ofstream outTree;
-	int traingSetSize = 8561;
+	int traingSetSize = 179511;
 	//char dataFilename[] = "data/000000.txt";
 	//char labelFilename[] = "data/000000.label";
 	//char treeFilename[] = "data/000000.tree";
 	//xlzhulab
-	//char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.txt";
-	//char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.label";
-	//char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForPrediction/000.tree";
+	char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.txt";
+	char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.label";
+	char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.tree";
 	//xlzhumac
-	char dataFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.txt";
+	/*char dataFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.txt";
 	char labelFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.label";
-	char treeFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.tree";
+	char treeFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.tree";*/
 	inLabel.open( labelFilename, ios::in);
 	inData.open( dataFilename, ios::in );
 	outTree.open( treeFilename, ios::out);
