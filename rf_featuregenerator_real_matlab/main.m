@@ -11,10 +11,10 @@ addPath('./lib/bfilter2/BilateralFiltering');
 
 %% Globals
 % g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/' %xlzhumac
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/444/'; %xlzhulab
-g_imgName_color =   '2011_22_06_07_26_16_021_978_677image.png';
-g_imgName_depth =   '2011_22_06_07_26_16_021_978_677depth.png';
-g_imgName_bf    =   '2011_22_06_07_26_16_021_978_677bf.png';
+g_dirr = 'E:/DATA/[CDC4CV11]/RealTest/2011_28_06_21_14_10_943/'; %xlzhulab
+g_imgName_color =   '2011_05_07_19_37_06_110_969_639image.png';
+g_imgName_depth =   '2011_05_07_19_37_06_110_969_639depth.png';
+g_imgName_bf    =   '2011_05_07_19_37_06_110_969_639bf.png';
 g_version = '0.1';
 g_classifierName = ['mog_' g_version '.classifier'];
 g_refine_flag = 0; %0: conservative; 1: radical

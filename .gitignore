@@ -28,6 +28,7 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+rf_train/[Dd]ata*/
 [Bb]in
 [Dd]ebug*/
 *.lib
@@ -36,5 +37,3 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-rf_train/data/000000.label
-rf_train/data/000000.label

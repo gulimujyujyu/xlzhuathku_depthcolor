@@ -12,14 +12,14 @@ int main()
 	ifstream inData;
 	ifstream inLabel;
 	ofstream outTree;
-	int traingSetSize = 179511;
-	//char dataFilename[] = "data/000000.txt";
-	//char labelFilename[] = "data/000000.label";
-	//char treeFilename[] = "data/000000.tree";
+	int traingSetSize = 40369;
+	char dataFilename[] = "data/000.txt";
+	char labelFilename[] = "data/000.label";
+	char treeFilename[] = "data/000.tree";
 	//xlzhulab
-	char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.txt";
-	char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.label";
-	char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444/018.tree";
+	//char dataFilename[] = "E:\\DATA\\[CDC4CV11]\\RealTest\\2011_28_06_21_14_10_943\\done/2011_28_26_21_14_10_943.txt";
+	//char labelFilename[] = "E:\\DATA\\[CDC4CV11]\\RealTest\\2011_28_06_21_14_10_943\\done/2011_28_26_21_14_10_943.label";
+	//char treeFilename[] = "E:\\DATA\\[CDC4CV11]\\RealTest\\2011_28_06_21_14_10_943\\done/2011_28_26_21_14_10_943.tree";
 	//xlzhumac
 	/*char dataFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.txt";
 	char labelFilename[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train/000.label";

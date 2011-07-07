@@ -22,21 +22,28 @@ void generateSeeds()
 int main(int argc, char *argv[])
 {
 	//char dirr[] = "F:\\xlzhu\\DATAs\\[CDC4CV]HandTracking\\000\\";
-	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic1\\018";
+	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic2\\000";
 	char re[] = "(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png";
  	
-	int w = 512;
-	int h = 512;
+	int w = 256;
+	int h = 256;
 	int rw = 64;
 	int rh = 64;
+
+	const int latStart = -60;
+	const int latEnd = 90;
+	const int latStep = 20;
+	const int lonStart = 0;
+	const int lonEnd = 360;
+	const int lonStep = 20;
 
 	//get a file
 	FileValidator fv(re, dirr);
 	//qDebug() << fv.findFileInDir() << endl;
 
-	string outFilename = "018.txt";
-	string outParamFilename = "018.param";
-	string outLabelFilename = "018.label";
+	string outFilename = "000.txt";
+	string outParamFilename = "000.param";
+	string outLabelFilename = "000.label";
 
 	srand(time(NULL));
 	generateSeeds();
@@ -66,8 +73,8 @@ int main(int argc, char *argv[])
 	QString colorimg;
 	QByteArray ci;
 
-	for (lat = -90; lat <= 90; lat += 20) {
-		for ( lon = 0; lon < 360; lon += 20) {
+	for (lat = latStart; lat <= latEnd; lat += latStep) {
+		for ( lon = lonStart; lon < lonEnd; lon += lonStep) {
 			printf("(%d, %d).\n", lat, lon);
 
 			depthFilename = QString::number(lat) + QString("_") + QString::number(lon) + QString("_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png");
@@ -125,7 +132,7 @@ int main(int argc, char *argv[])
 	*/
 	printf("Finished.\n");
 
-	QCoreApplication app(argc, argv);
+	//QCoreApplication app(argc, argv);
 
-	return app.exec();
+	return 0;//app.exec();
 }

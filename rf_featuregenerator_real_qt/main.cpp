@@ -23,13 +23,13 @@ int main(int argc, char *argv[])
 {
 	//xlzhumac
 	//char dirr[] = "C:\\Users\\xiaolongzhu\\Research\\PROJECTs\\[CDC4CV]HandTracking\\DATA\\ForRealData\\333\\train";
-	char dirr[] = "E:\\DATA\\[CDC4CV11]\\ForRealData\\444";
+	char dirr[] = "E:\\DATA\\[CDC4CV11]\\RealTest\\2011_28_06_21_14_10_943\\done";
 	char re[] = "(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png";
 	const int START_FILE_NUM = 1;
-	const int END_FILE_NUM = 55;
+	const int END_FILE_NUM = 464;
 
-	int w = 217;
-	int h = 233;
+	int w = 224;
+	int h = 220;
 	int rw = 64;
 	int rh = 64;
 
@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
 	FileValidator fv(re, dirr);
 	//qDebug() << fv.findFileInDir() << endl;
 
-	string outFilename = "018.txt";
-	string outParamFilename = "018.param";
-	string outLabelFilename = "018.label";
+	string outFilename = "2011_28_26_21_14_10_943.txt";
+	string outParamFilename = "2011_28_26_21_14_10_943.param";
+	string outLabelFilename = "2011_28_26_21_14_10_943.label";
 
 	srand(time(NULL));
 	generateSeeds();

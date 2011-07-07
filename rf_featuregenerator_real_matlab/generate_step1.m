@@ -11,7 +11,7 @@ addPath('./lib/bfilter2/BilateralFiltering');
 
 %% globals
 % g_dirr = 'C:/Users/xiaolongzhu/Research/PROJECTs/[CDC4CV]HandTracking/DATA/ForRealData/333/train/' %xlzhumac
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/444/'; %xlzhulab
+g_dirr = 'E:/DATA/[CDC4CV11]/RealTest/2011_28_06_21_14_10_943/'; %xlzhulab
 % 2011_22_06_07_20_19_730_978_677depth
 g_pattern_prefix = '\d{4}_\d{2}_\d{2}_\d{2}_\d{2}_\d{2}_\d{3}_\d{3}_\d{3}';
 g_pattern_postfix_depth = 'depth.png';
@@ -21,6 +21,7 @@ g_classifierName = ['mog_' g_version '.classifier'];
 g_refine_flag = 0; %0: conservative; 1: radical
 g_refine_neigh = [5 5];
 g_refine_thres = 16;
+g_startNum = 160;
 colorMapping = [
     255 0 0;
     255 0 255;
@@ -148,6 +149,6 @@ for ii = 1:numOfFiles
     subplot(2,2,4);
     imshow(im_lbl/g_numOfClass);
     
-    imwrite(im_de, [g_dirr num2str(ii) 'depth.png']);
-    imwrite(im_res, [g_dirr num2str(ii) 'color.png']);
+    imwrite(im_de, [g_dirr num2str(ii+g_startNum-1) 'depth.png']);
+    imwrite(im_res, [g_dirr num2str(ii+g_startNum-1) 'color.png']);
 end

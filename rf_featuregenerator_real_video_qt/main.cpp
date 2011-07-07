@@ -4,6 +4,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFile>
+#include <QTime>
 #include <QTextStream>
 using namespace cv;
 using namespace std; 
@@ -120,10 +121,12 @@ bool saveFrames(QFileInfo &vi, QString &folderName, QString np, QString fp)
 
 		imshow("color", colorFrame);
 		imshow("depth", depthFrame);
+
+		QString nowTime = QDateTime::currentDateTime().toString("yyyy_dd_MM_hh_mm_ss_zzz") + QString('_') + np + QString('_') + fp;
 		
-		QString colorFileName = dirr.canonicalPath() + QString('/') + QString::number(ii) + QString("color.png");
+		QString colorFileName = dirr.canonicalPath() + QString('/') + nowTime + QString("image.png");
 		string clfn = colorFileName.toLocal8Bit().data();
-		QString depthFileName = dirr.canonicalPath() + QString('/') + QString::number(ii) + QString("depth.png");
+		QString depthFileName = dirr.canonicalPath() + QString('/') + nowTime + QString("depth.png");
 		string dpfn = depthFileName.toLocal8Bit().data();
 		imwrite(clfn, colorFrame);
 		imwrite(dpfn, depthFrame);
