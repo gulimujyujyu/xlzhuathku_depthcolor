@@ -12,7 +12,7 @@ int main()
 	ifstream inData;
 	ifstream inLabel;
 	ofstream outTree;
-	int traingSetSize = 40369;
+	int traingSetSize = 86605;
 	char dataFilename[] = "data/000.txt";
 	char labelFilename[] = "data/000.label";
 	char treeFilename[] = "data/000.tree";

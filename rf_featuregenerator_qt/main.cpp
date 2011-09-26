@@ -22,19 +22,20 @@ void generateSeeds()
 int main(int argc, char *argv[])
 {
 	//char dirr[] = "F:\\xlzhu\\DATAs\\[CDC4CV]HandTracking\\000\\";
-	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic2\\000";
+	char dirr[] = "E:\\DATA\\[CDC4CV11]\\DATASET1\\Synthetic2\\004";
 	char re[] = "(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)_(\\d+)depth.png";
  	
 	int w = 256;
 	int h = 256;
 	int rw = 64;
 	int rh = 64;
-
-	const int latStart = -60;
-	const int latEnd = 90;
+	
+	const int openMode = 1; //0: iso::out, 1: iso::app
+	const int latStart = -40;
+	const int latEnd = 70;
 	const int latStep = 20;
-	const int lonStart = 0;
-	const int lonEnd = 360;
+	const int lonStart = 130;
+	const int lonEnd = 220;
 	const int lonStep = 20;
 
 	//get a file
@@ -52,12 +53,12 @@ int main(int argc, char *argv[])
 	a.setSeeds(offx, offy);
 	a.setParameter(w,h,rw,rh);
 	a.createHash();
-	if (!(a.setOutputFilename(outFilename.c_str(),outParamFilename.c_str(), 0)))
+	if (!(a.setOutputFilename(outFilename.c_str(),outParamFilename.c_str(), openMode)))
 	{
 		printf("Error occurred in writing to %s, %s", outFilename.c_str(),outParamFilename.c_str());
 		return -1;
 	}
-	if (!(a.setOutputFilenameLabel(outLabelFilename.c_str(), 0)))
+	if (!(a.setOutputFilenameLabel(outLabelFilename.c_str(), openMode)))
 	{
 		printf("Error occurred in writing to %s", outLabelFilename.c_str());
 		return -1;

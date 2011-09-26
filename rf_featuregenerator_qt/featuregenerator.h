@@ -8,7 +8,7 @@
 #define SEEDS_ARRAY_SIZE 400
 #define SEEDS_PER_IMAGE 2000
 #define MAX_DEPTHVALUE 300
-#define IMAGE_STEP 4
+#define IMAGE_STEP 3
 
 using namespace std;
 

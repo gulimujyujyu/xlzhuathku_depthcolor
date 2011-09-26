@@ -8,24 +8,24 @@ using namespace std;
 int main()
 {
 	//sliding window
-	int w = 224;
-	int h = 220;
+	int w = 256;
+	int h = 256;
 	int rw = 64;
 	int rh = 64;
 
 	//debug
 	//Random Forest
-	char treeFilename[] = "..\\rf_train\\data\\2011_28_26_21_14_10_943.tree";
-	char outTreeFilename[] = "..\\rf_train\\data\\2011_28_26_21_14_10_943.treeout";
+	char treeFilename[] = "..\\rf_train\\data\\000.tree";
+	char outTreeFilename[] = "..\\rf_train\\data\\000.treeout";
 	//param
-	char paramFilename[] = "..\\rf_train\\data\\2011_28_26_21_14_10_943.param";
-	char paramOutFilename[] = "..\\rf_train\\data\\2011_28_26_21_14_10_943.out.param";
+	char paramFilename[] = "..\\rf_train\\data\\000.param";
+	char paramOutFilename[] = "..\\rf_train\\data\\000.out.param";
 	//image
-	char dataFilename[] = "..\\rf_train\\data\\453depth.png";
-	char dataOutFilename[] = "..\\rf_train\\data\\453depth.out.png";
+	char dataFilename[] = "..\\rf_train\\data\\40_180_2011_07_07_11_34_59_008depth.png";
+	char dataOutFilename[] = "..\\rf_train\\data\\40_180_2011_07_07_11_34_59_008depth.out.png";
 	//LABEL
-	char labelFilename[] = "..\\rf_train\\data\\453color.png";
-	char labelOutFilename[] = "..\\rf_train\\data\\453color.out.png";
+	char labelFilename[] = "..\\rf_train\\data\\50_210_2011_07_07_11_35_04_468color.png";
+	char labelOutFilename[] = "..\\rf_train\\data\\50_210_2011_07_07_11_35_04_468color.out.png";
 
 	//xlzhulab
 	////Random Forest

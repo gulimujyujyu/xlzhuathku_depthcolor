@@ -1,30 +1,30 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlzhuathku_depthcolor", "xlzhuathku_depthcolor\xlzhuathku_depthcolor.vcproj", "{82224DD3-7211-4B5B-B2D2-34649556B1E2}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D27F7EA6-A2A3-4822-8019-ADF39A2DB744}"
 	ProjectSection(SolutionItems) = preProject
-		README = README
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlzhuathku_depthcolor", "xlzhuathku_depthcolor\xlzhuathku_depthcolor.vcproj", "{82224DD3-7211-4B5B-B2D2-34649556B1E2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_id3", "rf_id3\rf_id3.vcproj", "{E5A0DF6E-0F16-41CC-8510-50B0DF30D0CC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator", "rf_featuregenerator\rf_featuregenerator.vcproj", "{6DF179F2-A804-4105-8E03-59002A07682D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator", "rf_featuregenerator\rf_featuregenerator.vcxproj", "{6DF179F2-A804-4105-8E03-59002A07682D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_train", "rf_train\rf_train.vcproj", "{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_train", "rf_train\rf_train.vcxproj", "{1A837F1E-F7B5-4D08-9B49-2F06B8131E05}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_img2float", "rf_img2float\rf_img2float.vcproj", "{87A144DA-17D8-4232-985E-4664998E88C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_img2float", "rf_img2float\rf_img2float.vcxproj", "{87A144DA-17D8-4232-985E-4664998E88C3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_id3_cpu", "rf_id3_cpu\rf_id3_cpu.vcproj", "{9EC49288-D27A-41E3-9884-B2F17B2C1363}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_qt", "rf_featuregenerator_qt\rf_featuregenerator_qt.vcproj", "{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_qt", "rf_featuregenerator_qt\rf_featuregenerator_qt.vcxproj", "{BBB927A0-34C9-47EE-A7E5-4668CEDFDABF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_predict", "rf_predict\rf_predict.vcproj", "{0C5E6734-7080-430D-8F87-CE05B62B85B7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_predict", "rf_predict\rf_predict.vcxproj", "{0C5E6734-7080-430D-8F87-CE05B62B85B7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_qt", "rf_featuregenerator_real_qt\rf_featuregenerator_real_qt.vcproj", "{15E4B881-5A34-48A3-9B85-280661A1C59A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_qt", "rf_featuregenerator_real_qt\rf_featuregenerator_real_qt.vcxproj", "{15E4B881-5A34-48A3-9B85-280661A1C59A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_video_qt", "rf_featuregenerator_real_video_qt\rf_featuregenerator_real_video_qt.vcproj", "{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rf_featuregenerator_real_video_qt", "rf_featuregenerator_real_video_qt\rf_featuregenerator_real_video_qt.vcxproj", "{6CCAA90B-33D7-4799-88D3-5D07EB20C3DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,5 +75,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		QtVersion = 4.7.1
 	EndGlobalSection
 EndGlobal

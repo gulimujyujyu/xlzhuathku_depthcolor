@@ -187,6 +187,10 @@
 			SourceControlFiles="false"
 			>
 		</Filter>
+		<File
+			RelativePath=".\README"
+			>
+		</File>
 	</Files>
 	<Globals>
 		<Global
