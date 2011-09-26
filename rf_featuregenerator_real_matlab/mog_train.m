@@ -13,6 +13,8 @@ dt = data(:,end);
 ma = max(lb);
 mi = min(lb);
 
+rng('shuffle');
+
 mu = zeros(m,itemDim);
 sigma = zeros(itemDim, itemDim, m);
 for ii = 1:m

@@ -40,7 +40,8 @@ for label = 1:g_numOfClass
     data = fscanf(fin, '%d %d %d %d', [4 inf]);
     data = data';
     %fit distribution
-    gmm{label} = mog_train(data, g_m);
+    gmm{label} = gmdistribution.fit(data(:,1:3)./255,g_m); %better than mine implementation
+    %gmm{label} = mog_train(data, g_m);
     %plot
     figure(1)
     hold on

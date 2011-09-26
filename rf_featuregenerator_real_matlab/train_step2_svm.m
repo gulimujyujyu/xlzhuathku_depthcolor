@@ -11,7 +11,7 @@ clc
 %% includes
 addPath('./lib/libsvm-3.1/matlab')
 %% Globals
-g_dirr = 'E:/DATA/[CDC4CV11]/ForRealData/333/';
+g_dirr = 'E:/DATA/[CDC4CV11]/RealTest/2011_28_06_21_14_10_943/';
 g_version = '0.1';
 g_fileName_output = ['svm_' g_version '.classifier'];
 g_m = 3;
@@ -42,7 +42,7 @@ for label = 1:g_numOfClass
     %close the file
     fclose(fin);
 end
-svmModel = svmtrain(trainData(:,4), trainData(:,1:3),'-c 1 -g 0.07 -b 1');
+svmModel = svmtrain(trainData(:,4), trainData(:,1:3),'-c 5 -g 0.07 -b 1');
 
 %test
 [predict_label, accuracy, prob_estimates] = svmpredict(trainData(:,4), trainData(:,1:3), svmModel, '-b 1');

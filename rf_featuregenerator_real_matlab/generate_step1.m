@@ -55,7 +55,8 @@ end
 
 %% Step 2:
 % for each pair generate feature
-numOfFiles = size(strList,1)/2;
+%numOfFiles = size(strList,1)/2;
+numOfFiles = 1;
 
 for ii = 1:numOfFiles
     %% step 2.1: pre-processing
@@ -104,6 +105,7 @@ for ii = 1:numOfFiles
                 im_res(xx,yy,:) = 0;
             else
                 [prob class] = mog_predict(item, gmm, g_numOfClass);
+                %[prob class] = svm_predict(item, svmModel, g_m, g_numOfClass);
                 if class == -1 || class == 7
                     im_res(xx,yy,:) = 0;
                 else
