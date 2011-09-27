@@ -21,7 +21,7 @@ g_classifierName = ['mog_' g_version '.classifier'];
 g_refine_flag = 0; %0: conservative; 1: radical
 g_refine_neigh = [5 5];
 g_refine_thres = 16;
-g_startNum = 160;
+g_startNum = 0;
 colorMapping = [
     255 0 0;
     255 0 255;
@@ -55,10 +55,9 @@ end
 
 %% Step 2:
 % for each pair generate feature
-%numOfFiles = size(strList,1)/2;
-numOfFiles = 1;
+numOfFiles = size(strList,1)/2;
 
-for ii = 1:numOfFiles
+for ii = 1:10:numOfFiles
     %% step 2.1: pre-processing
     % bilateral filter must in [0,1]
     im_co = double(imread(strList(ii*2,:)))/255;
@@ -153,4 +152,5 @@ for ii = 1:numOfFiles
     
     imwrite(im_de, [g_dirr num2str(ii+g_startNum-1) 'depth.png']);
     imwrite(im_res, [g_dirr num2str(ii+g_startNum-1) 'color.png']);
+    imwrite(im_co, [g_dirr num2str(ii+g_startNum-1) 'image.png']);
 end
